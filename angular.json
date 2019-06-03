@@ -23,7 +23,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "node_modules/bootstrap/scss/bootstrap.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -132,5 +133,10 @@
       }
     }
   },
-  "defaultProject": "expokinal2019"
+  "defaultProject": "expokinal2019",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
