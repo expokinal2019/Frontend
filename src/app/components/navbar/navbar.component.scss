@@ -1,3 +1,5 @@
+@import '../../../styles.scss';
+
 body {
     overflow-x: hidden;
   }
@@ -5,13 +7,18 @@ body {
 .toggle-btn span{
     width: 45px;
     height: 4px;
-    background-color: whitesmoke;
+    background-color: $light;
     display: block;
     margin-top: 4px;
 }
 
 .sidebar-cont, nav{
-    background-color: #0F2026;
+    background-color: $dark;
+}
+
+.sidebar-heading {
+    padding-left: 60px;
+    margin-bottom: 25px;
 }
 
 .card{
@@ -20,7 +27,7 @@ body {
     border-style: none;
     padding: 10px 20px;
     .btn-link{
-        color: whitesmoke;
+        color: $light;
         text-decoration: none;
         font-size: 20px; 
     }
@@ -31,7 +38,7 @@ body {
 }
 
 .nav-link{
-    color: whitesmoke
+    color: $light;
 }
 
 #sidebar-wrapper {
