@@ -1,10 +1,10 @@
 <div class="d-flex" id="wrapper">
     <div class="sidebar-cont" id="sidebar-wrapper">
-      <div class="sidebar-heading">
-        <img src="http://chittagongit.com/download/111939" height="100px">
+      <div class="sidebar-heading" >
+        <img id="hey" src="http://chittagongit.com/download/111939" height="100px">
       </div>
       <div class="list-group list-group-flush">
-          <div id="accordion">
+          <!-- <div id="accordion">
             <div class="card">
                 <h4 style="margin-bottom: 10px">
                   <a href="#" class="btn-link"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Proyectos</a>
@@ -27,8 +27,43 @@
                 </div>
               </div>
             </div>
+          </div> -->
 
+
+
+
+          <p>
+            <a class="sidenav-link" (click)="isCollapsed1 = !isCollapsed1"
+            [attr.aria-expanded]="!isCollapsed1" aria-controls="collapse1">
+            Expandir 1
+          </a>
+          </p>
+          <hr>
+          <div id="collapse" [ngbCollapse]="isCollapsed1">
+            <div class="card">
+              <div class="card-body">
+                Lista 1
+              </div>
+            </div>
           </div>
+          <p>
+              <a class="sidenav-link" (click)="isCollapsed2 = !isCollapsed2"
+              [attr.aria-expanded]="!isCollapsed2" aria-controls="collapse2">
+              Expandir 2
+            </a>
+            </p>
+            <hr>
+            <div id="collapse" [ngbCollapse]="isCollapsed2">
+              <div class="card">
+                <div class="card-body">
+                  Lista 2
+                </div>
+              </div>
+            </div>
+
+
+
+
       </div>
     </div>
 
@@ -41,28 +76,25 @@
           <span style="margin-bottom: 10px;"></span>
         </div>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler hidden-sm-up" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
           <div class="navbar-toggler-icon toggle-btn">
-              <i class='fas fa-caret-down' style='font-size:36px; color: whitesmoke'></i>
-          </div>
+            <i class='fas fa-caret-down' style='font-size:24px; color: whitesmoke'></i>
+        </div>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Options</a>
+              <a class="nav-link" href="#">Opciones</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Acount
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <li class="nav-item dropdown" ngbDropdown>
+              <a class="nav-link dropdown-toggle" id="id01" href="#" ngbDropdownToggle>Configuracion de la cuenta</a>
+              <div class="dropdown-menu" aria-labelledby="id01" ngbDropdownMenu>
                 <a class="dropdown-item" href="#"><i class='fas fa-edit'></i>   Edit</a>
                 <a class="dropdown-item" href="#"><i class='	fas fa-code-branch'></i>   Configuration</a>
-                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#"><i class='fas fa-sign-out-alt'></i>  Log out</a>
               </div>
             </li>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbAccordionConfig } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-navbar',
@@ -7,10 +7,11 @@ import { NgbAccordionConfig } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  isNavbarCollapsed=true;
 
-  constructor(config: NgbAccordionConfig) {
-    config.closeOthers = true;
-    config.type = 'expoprimary';
+  constructor(config: NgbDropdownConfig) {
+    config.placement = 'bottom-right';
+    config.autoClose = true;
   }
 
   ngOnInit() {
