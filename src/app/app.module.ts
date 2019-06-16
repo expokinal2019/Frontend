@@ -7,6 +7,8 @@ import { NgbModule, NgbAccordionConfig } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CreateTaskComponent } from './components/create-task/create-task.component';
 import { IndexComponent } from './components/index/index.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { IndexComponent } from './components/index/index.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [NgbAccordionConfig],
   bootstrap: [AppComponent]
