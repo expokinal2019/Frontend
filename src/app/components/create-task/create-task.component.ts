@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { RestService } from 'src/app/services/rest.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-task',
@@ -9,19 +10,19 @@ import { RestService } from 'src/app/services/rest.service';
 })
 export class CreateTaskComponent {
   taskForm = this.fb.group({
-    title: ['', Validators.required],
-    date: ['', Validators.required],
+    name: ['', Validators.required],
+    deadline: ['', Validators.required],
     description: ['', Validators.required],
   });
 
-  constructor(private fb: FormBuilder, private rest: RestService) { }
+  constructor(private fb: FormBuilder, private rest: RestService, private router: Router) { }
 
   onSubmit() {
-    let date = this.taskForm.value.date;
-    this.taskForm.value.date = `${date.year}/${date.month}/${date.day}`
+    let deadline = this.taskForm.value.deadline;
+    this.taskForm.value.deadline = `${deadline.year}/${deadline.month}/${deadline.day}`
     this.rest.push('tasks', this.taskForm.value).subscribe(
       res => {
-        console.log(res);
+        this.router.navigate(['tasks']);
       }
     )
   }

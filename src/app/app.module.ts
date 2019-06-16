@@ -9,13 +9,15 @@ import { CreateTaskComponent } from './components/create-task/create-task.compon
 import { IndexComponent } from './components/index/index.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ListTasksComponent } from './components/list-tasks/list-tasks.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     CreateTaskComponent,
-    IndexComponent
+    IndexComponent,
+    ListTasksComponent
   ],
   imports: [
     BrowserModule,
