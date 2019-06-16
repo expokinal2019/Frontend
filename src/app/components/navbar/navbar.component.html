@@ -1,77 +1,76 @@
 <div class="d-flex" id="wrapper">
-    <div class="sidebar-cont" id="sidebar-wrapper">
-      <div class="sidebar-heading" style="padding-left: 60px; margin-bottom: 25px">
-        <img src="http://chittagongit.com/download/111939" height="100px">
-      </div>
-      <div class="list-group list-group-flush">
-          <div id="accordion">
-            <div class="card">
-                <h4 style="margin-bottom: 10px">
-                  <a href="" class="btn-link"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Proyectos</a>
-                </h4>
-                <hr style="margin-top: -10px; background-color: whitesmoke;">
-              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                  Lista 1
-                </div>
-              </div>
-            </div>
-            <div class="card">
-                <h4 style="margin-bottom: 10px">
-                  <a href="" class="btn-link"  data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Equipos</a>
-                </h4>
-                <hr style="margin-top: -10px; background-color: whitesmoke;">
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="card-body">
-                  Lista 2
-                </div>
-              </div>
-            </div>
-
-          </div>
-      </div>
+  <!-- Sidebar -->
+  <div class="sidebar-cont" id="sidebar-wrapper">
+    <div class="sidebar-heading" style="padding-left: 60px; margin-bottom: 25px">
+      <img src="http://chittagongit.com/download/111939" height="100px">
     </div>
-
-    <div id="page-content-wrapper">
-
-      <nav class="navbar navbar-expand-lg border-bottom">
-        <div class="toggle-btn" style="margin-top: 7px;" onclick="show()">
-          <span style="margin-top: 10px;"></span>
-          <span></span>
-          <span style="margin-bottom: 10px;"></span>
-        </div>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <div class="navbar-toggler-icon toggle-btn">
-              <i class='fas fa-caret-down' style='font-size:36px; color: whitesmoke'></i>
-          </div>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Options</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Acount
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#"><i class='fas fa-edit'></i>   Edit</a>
-                <a class="dropdown-item" href="#"><i class='	fas fa-code-branch'></i>   Configuration</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#"><i class='fas fa-sign-out-alt'></i>  Log out</a>
+    <div class="list-group list-group-flush">
+        <div id="accordion">
+          <div class="card">
+              <h4 style="margin-bottom: 10px">
+                <a href="" class="btn-link"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Proyectos</a>
+              </h4>
+              <hr style="margin-top: -10px; background-color: whitesmoke;">
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+                Lista 1
               </div>
-            </li>
-          </ul>
+            </div>
+          </div>
+          <div class="card">
+              <h4 style="margin-bottom: 10px">
+                <a href="" class="btn-link"  data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Equipos</a>
+              </h4>
+              <hr style="margin-top: -10px; background-color: whitesmoke;">
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body">
+                Lista 2
+              </div>
+            </div>
+          </div>
         </div>
-      </nav>
-
-      
-
+    </div>
   </div>
+  <!-- Navbar -->
+  <div id="page-content-wrapper">
+    <nav class="navbar navbar-expand-lg border-bottom">
+      <div class="toggle-btn" style="margin-top: 7px;" onclick="show()">
+        <span style="margin-top: 10px;"></span>
+        <span></span>
+        <span style="margin-bottom: 10px;"></span>
+      </div>
 
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="navbar-toggler-icon toggle-btn">
+            <i class='fas fa-caret-down' style='font-size:36px; color: whitesmoke'></i>
+        </div>
+      </button>
 
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Options</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Acount
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#"><i class='fas fa-edit'></i>   Edit</a>
+              <a class="dropdown-item" href="#"><i class='	fas fa-code-branch'></i>   Configuration</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#"><i class='fas fa-sign-out-alt'></i>  Log out</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Outlet -->
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
