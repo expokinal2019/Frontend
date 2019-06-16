@@ -1,8 +1,14 @@
-$primary: #319795;
+// $primary: #319795;
 $secondary: #3182CE;
-$green: #38A169;
+// $green: #38A169;
+
+$primary: #BFD962;
+$green: #73A626;
+
 $dark: #0F2026;
 
+
+$sidenav-background-color: $dark;
 @import
     'functions',
     'variables',
