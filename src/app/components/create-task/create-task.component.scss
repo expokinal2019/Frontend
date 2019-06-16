@@ -1,4 +1,24 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import '../../../theme.scss';
+
+.container {
+  background-color: white;
+  padding: 30px;
+  margin: 20px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+form {
+  label {
+    color: $primary;
+    font-weight: bold;
+  }
+
+  input {
+    border-radius: 30px;
+  }
+}
+
 $md-chip-height: 32px;
 $md-chip-color: #e0e0e0;
 
@@ -45,7 +65,7 @@ $md-chip-color: #e0e0e0;
   cursor: pointer;
   font: inherit;
   line-height: 20px;
-  &:after { 
+  &:after {
     color: $md-chip-color;
     content: 'x';
   }
@@ -61,40 +81,11 @@ $md-chip-color: #e0e0e0;
   padding: 12px 0;
   .md-chip {
     margin: 0 5px 3px 0;
-  } 
-}
-
-.md-chip-raised {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
-  0 1px 5px 0 rgba(0, 0, 0, 0.12), 
-  0 3px 1px -2px rgba(0, 0, 0, 0.2);
-}
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-body {
-  background:#f0f0f0;
-  position: absolute;
-  width:100%;
-  padding:0;
-  margin:0;
-  font-family: "Roboto", sans-serif;
-  color: #333;
-}
-
-section {
-  background:white;
-  margin:0 auto;
-  padding: 4em;
-  max-width: 800px;
-  h1 {
-    margin: 0 0 2em;
   }
 }
 
-.comp{
-  margin-left: 80%;
-  margin-top: -40%;
+.md-chip-raised {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+  0 1px 5px 0 rgba(0, 0, 0, 0.12),
+  0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }

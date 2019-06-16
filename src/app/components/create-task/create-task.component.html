@@ -1,41 +1,38 @@
-<section class="comp">
-<input type="text" class="ingresart" placeholder="nombre de la tarea">
-<div class="row"></div>
-<div class="row">
-  <div class="md-chips">
-    <div class="md-chip md-chip-hover">
-      <div class="md-chip-icon">EA</div>
-      Asignado a: 
+<section class="container shadow">
+  <form>
+    <div class="form-group">
+      <label for="title" class="font-weight-bold text-primary">Titulo de la tarea</label>
+      <input type="text" class="form-control" placeholder="Tarea">
     </div>
-  </div>
-  <div class="md-chips">
-    <div class="md-chip md-chip-hover">
-      <div class="md-chip-icon" >FH</div>
-      Fecha
-    </div>
-  </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Descripción</span>
-  </div>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
-</div>
-    <div class="etiqueta">
-        <div class="row">
-            <div class="column">
-          <h4 class="title">Agregar etiqueta</h4>
-          </div>
-          <div class="column"><button type="button" class="btn btn-sec btn-circle"><img src="https://img.icons8.com/material/24/000000/edit.png"></button></div>
-          
-          </div>
-          <div class="column"><input type="text" class="texto"></div>
+    <div class="form-group">
+      <label>Asignado a:</label>
+      <div class="md-chips">
+        <div class="md-chip md-chip-hover">
+          <div class="md-chip-icon">EA</div>
+          <div class="md-chip-icon">FH</div>
         </div>
-        <br>
-        <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Comentarios</span>
-            </div>
-            <textarea class="form-control" aria-label="With textarea"></textarea>
-          </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+            <i class="fas fa-calendar-alt"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description">Descripción</label>
+      <textarea class="form-control" name="description" id="description" cols="30" rows="5"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="labels">Etiquetas</label>
+      <input type="text" class="form-control" placeholder="Etiquetas">
+    </div>
+    <button class="btn btn-primary">
+      Crear tarea
+    </button>
+  </form>
 </section>
