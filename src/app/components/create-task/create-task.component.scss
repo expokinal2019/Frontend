@@ -98,3 +98,73 @@ section {
   margin-left: 80%;
   margin-top: -40%;
 }
+
+// Colors
+$color1: #51C1F0;
+$color2: #7DCE94;
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#save {
+  padding: 20px 50px;
+  border-radius: 30px;
+  border: 0;
+  background: $color1;
+  color: white;
+  transition: all 150ms ease;
+  cursor: pointer;
+  box-shadow: 0 30px 30px -20px rgba(0,0,0,0.4);
+  &:hover, &:focus {
+    background: darken($color1, 10%);
+    outline: 0;
+    box-shadow: 0 30px 30px -25px rgba(0,0,0,1);
+    transform: translateY(3px);
+  }
+  &:active {
+    background: darken($color1, 15%);
+    box-shadow: 0 30px 30px -20px rgba(0,0,0,0.4);
+    transform: translateY(5px);
+  }
+  &:disabled {
+    cursor: auto;
+    &:hover {
+      box-shadow: 0 30px 30px -20px rgba(0,0,0,0.4);
+    }
+  }
+  &.done {
+    background: $color2;
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  .spinner {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: transparent;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid transparent;
+    animation: loading 0.5s infinite linear;
+  }
+
+  @keyframes loading {
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+  }
+}
+

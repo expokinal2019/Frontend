@@ -1,86 +1,83 @@
+
 <div class="d-flex" id="wrapper">
-  <!-- Sidebar -->
-  <div class="sidebar-cont" id="sidebar-wrapper">
-    <div class="sidebar-heading" style="padding-left: 60px; margin-bottom: 25px">
-      <img src="http://chittagongit.com/download/111939" height="100px">
+  <!-- Sidenav -->
+  <div class="sidebar-cont shadow-sm" id="sidebar-wrapper">
+    <div class="sidebar-heading text-center">
+      <img src="assets/logo.jpg" height="100px">
     </div>
     <div class="list-group list-group-flush">
-        <div id="accordion">
-          <div class="card">
-              <h4 style="margin-bottom: 10px">
-                <a href="" class="btn-link"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Proyectos</a>
-              </h4>
-              <hr style="margin-top: -10px; background-color: whitesmoke;">
-            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-              <div class="card-body">
-                Lista 1
-              </div>
-            </div>
-          </div>
-          <div class="card">
-              <h4 style="margin-bottom: 10px">
-                <a href="" class="btn-link"  data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Equipos</a>
-              </h4>
-              <hr style="margin-top: -10px; background-color: whitesmoke;">
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-              <div class="card-body">
-                Lista 2
-              </div>
-            </div>
-          </div>
-<<<<<<< HEAD
+      <button class="btn btn-outline-primary btn-sm mx-2 shadow-sm">
+        <i class="fas fa-plus"></i>
+        Crear nueva tarea
+      </button>
+      <button class="btn btn-outline-primary btn-sm mx-2 shadow-sm">
+        <i class="fas fa-tasks"></i>
+        Tareas
+      </button>
+      <!-- Projects -->
+      <button
+        class="btn btn-primary btn-sm mx-2 shadow-sm"
+        (click)="isCollapsed1 = !isCollapsed1"
+        [attr.aria-expanded]="!isCollapsed1"
+        aria-controls="collapse1">
+        <i class="fas fa-thumbtack"></i>
+        Proyectos
+      </button>
+      <div
+        id="collapse"
+        class="list-items"
+        [ngbCollapse]="isCollapsed1">
+        <ul class="list-container mx-2 shadow-sm">
+          <li>Proyecto A</li>
+          <li>Proyecto B</li>
+          <li>Proyecto ExpoKinal 2019</li>
+        </ul>
       </div>
-    </div>
-    <div id="page-content-wrapper">
-      <nav class="navbar navbar-expand-lg border-bottom">
-        <div class="toggle-btn" style="margin-top: 7px;" onclick="show()">
-          <span style="margin-top: 10px;"></span>
-          <span></span>
-          <span style="margin-bottom: 10px;"></span>
-=======
-
->>>>>>> b915416bf3d9f7b768f0fe9b459a0b4481f0d550
-        </div>
+      <!-- Teams -->
+      <button class="btn btn-secondary btn-sm mx-2 shadow-sm" (click)="isCollapsed2 = !isCollapsed2"
+        [attr.aria-expanded]="!isCollapsed2" aria-controls="collapse2">
+        <i class="fas fa-users"></i>
+        Equipos
+      </button>
+      <div id="collapse" class="list-items" [ngbCollapse]="isCollapsed2">
+        <ul class="list-container mx-2 shadow-sm">
+          <li>Dev</li>
+          <li>Diseño</li>
+          <li>Contabilidad</li>
+        </ul>
+      </div>
     </div>
   </div>
   <!-- Navbar -->
   <div id="page-content-wrapper">
-    <nav class="navbar navbar-expand-lg border-bottom">
+    <nav class="navbar navbar-light navbar-white navbar-expand-lg shadow-sm">
       <div class="toggle-btn" style="margin-top: 7px;" onclick="show()">
         <span style="margin-top: 10px;"></span>
         <span></span>
         <span style="margin-bottom: 10px;"></span>
       </div>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <div class="navbar-toggler-icon toggle-btn">
-            <i class='fas fa-caret-down' style='font-size:36px; color: whitesmoke'></i>
+          <i class='fas fa-caret-down' style='font-size:36px; color: whitesmoke'></i>
         </div>
-<<<<<<< HEAD
-      </nav>
-      <div class="container-fluid">
-        <h1 class="mt-4"></h1>
-       </div>
-=======
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Options</a>
+            <a class="nav-link" href="#">Opciones</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Acount
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#"><i class='fas fa-edit'></i>   Edit</a>
-              <a class="dropdown-item" href="#"><i class='	fas fa-code-branch'></i>   Configuration</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#"><i class='fas fa-sign-out-alt'></i>  Log out</a>
+          <li class="nav-item dropdown" ngbDropdown>
+            <a class="nav-link dropdown-toggle" id="id01" href="#" ngbDropdownToggle>Configuracion de la cuenta</a>
+            <div class="dropdown-menu" aria-labelledby="id01" ngbDropdownMenu>
+              <a class="dropdown-item" href="#"><i class='fas fa-edit'></i> Edit</a>
+              <a class="dropdown-item" href="#"><i class='fas fa-code-branch'></i> Configuration</a>
+              <a class="dropdown-item" href="#"><i class='fas fa-sign-out-alt'></i> Log out</a>
             </div>
           </li>
         </ul>
@@ -89,7 +86,6 @@
     <!-- Outlet -->
     <div class="container-fluid">
       <router-outlet></router-outlet>
->>>>>>> b915416bf3d9f7b768f0fe9b459a0b4481f0d550
     </div>
   </div>
 </div>
