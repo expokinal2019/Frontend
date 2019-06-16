@@ -4,11 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from '../app.component';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { CreateTaskComponent } from '../components/create-task/create-task.component';
+import { IndexComponent } from '../components/index/index.component';
 
 const appRoutes: Routes = [
   { path: 'navbar', component: NavbarComponent },
-  { path: '', component: AppComponent },
-  { path: 'createTask', component: CreateTaskComponent }
+  { path: 'createTask', component: CreateTaskComponent },
+  { path: '', component: IndexComponent }
 ];
 
 @NgModule({
