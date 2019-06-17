@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAccordionConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
-  isNavbarCollapsed=true;
+export class NavbarComponent {
 
-  constructor(config: NgbDropdownConfig) {
-    config.placement = 'bottom-right';
-    config.autoClose = true;
+  constructor(config: NgbAccordionConfig, private router: Router) {
+    config.closeOthers = true;
+    config.type = 'expoprimary';
   }
 
-  ngOnInit() {
+  navigateTo(to) {
+    this.router.navigate([to]);
   }
-
 }

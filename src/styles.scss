@@ -1,11 +1,7 @@
-$primary: #15442E;
-$secondary: #BFD962;
-$dark: #0F2026;
-$light: #D9D0C1;
+@import './theme.scss';
 
-$idk: #8C8474;
-
-@import 
+/* You can add global styles to this file, and also import other style files */
+@import
     'functions',
     'variables',
     'mixins',

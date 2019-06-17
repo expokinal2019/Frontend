@@ -1,52 +1,25 @@
-@import '../../../styles.scss';
+@import '../../../theme.scss';
 
 body {
     overflow-x: hidden;
-  }
+}
 
 .toggle-btn span{
     width: 45px;
     height: 4px;
-    background-color: $light;
+    background-color: $primary;
     display: block;
     margin-top: 4px;
 }
 
-.sidebar-cont, nav{
-    background-color: $dark;
-    p{
-        color: $light;
-        padding-left: 15px;
-    }
-    #collapse{
-        margin: -35px 0 25px;
-        padding-left: 15px;
-    }
+.sidebar-cont {
+    background-color: $sidenav-background-color;
+    z-index: 200;
 }
 
 #hey{ 
     margin-left: 45px;
     margin-bottom: 30px;
-}
-
-.card{
-    background-color: #0F2026;
-    color: rgba(255, 255, 255, 0.767);
-    border-style: none;
-    padding: 10px 20px;
-    .btn-link{
-        color: $light;
-        text-decoration: none;
-        font-size: 20px; 
-    }
-}
-
-.card-body{
-    padding: 0px 20px
-}
-
-.nav-link{
-    color: $light;
 }
 
 #sidebar-wrapper {
@@ -64,7 +37,7 @@ body {
 }
 
 #sidebar-wrapper .list-group {
-    width: 15rem;   
+    width: 15rem;
 }
 
 #page-content-wrapper {
@@ -75,11 +48,19 @@ body {
     margin-left: 0;
 }
 
-.navbar-nav li:hover{
-    border-radius: 10px;
-    background-color: $light;
+.navbar{
+    background-color: $ExpoApp-1;
     .nav-link{
-        color: $dark;
+        margin: 2px 5px;
+        color: #379597;
+    }
+}
+
+.navbar-nav li:hover{
+    
+    .nav-link{
+        border-radius: 10px;
+        border: 0.5px solid #379597;
     }
 }
 
@@ -96,4 +77,28 @@ body {
     #wrapper.toggled #sidebar-wrapper {
         margin-left: -15rem;
     }
+}
+
+.btn {
+  z-index: 100;
+  margin-bottom: 15px;
+}
+
+.list-container {
+  background-color: white;
+  margin-top: -5px;
+  list-style: none;
+  padding: 0;
+  border-radius: 3px;
+
+  li {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+
+    &:hover {
+      background-color: $light;
+      cursor: pointer;
+    }
+  }
 }
