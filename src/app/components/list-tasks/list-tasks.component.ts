@@ -8,13 +8,20 @@ import { RestService } from 'src/app/services/rest.service';
 })
 export class ListTasksComponent implements OnInit {
   tasks = [];
+  public id
 
   constructor(private rest: RestService) { }
 
   ngOnInit() {
     this.rest.findAll('tasks').subscribe(
-      res => this.tasks = res['tasks']
+      res => {this.tasks = res['tasks']
+      console.log(res)}
     );
+  }
+
+  getID(id){
+    this.id = id
+    console.log(this.id)
   }
 
 }

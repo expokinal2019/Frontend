@@ -10,6 +10,7 @@ import { IndexComponent } from './components/index/index.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListTasksComponent } from './components/list-tasks/list-tasks.component';
+import { EditTaskComponent } from './components/edit-task/edit-task.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ListTasksComponent } from './components/list-tasks/list-tasks.component
     NavbarComponent,
     CreateTaskComponent,
     IndexComponent,
-    ListTasksComponent
+    ListTasksComponent,
+    EditTaskComponent
   ],
   imports: [
     BrowserModule,
