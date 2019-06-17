@@ -3,25 +3,39 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { RestService } from 'src/app/services/rest.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
+export interface Task {
+  name: string,
+  description: string,
+  deadline: Date,
+  labels: [],
+  taskOwner: string,
+  status: string,
+  progress: Number
+}
+
 @Component({
   selector: 'app-edit-task',
   templateUrl: './edit-task.component.html',
   styleUrls: ['./edit-task.component.scss']
 })
-export class EditTaskComponent implements OnInit{
+export class EditTaskComponent implements OnInit {
 
-  public task
+  public task: Task
   public id
 
-  ngOnInit(){
+
+  ngOnInit() {
     this.activeRoute.params.subscribe((params: Params) => {
       this.id = params.id
       console.log(this.id)
     })
     this.rest.findOne('tasks', this.id).subscribe(
-      res => {this.task = res['tasks']
-      console.log(this.task)
-      console.log(this.id)}
+      res => {
+      this.task = res['tasks']
+        console.log(this.task.name)
+        console.log(this.id)
+        console.log(this.task.deadline)
+      }
     );
   }
 
