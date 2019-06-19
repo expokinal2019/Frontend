@@ -3,7 +3,7 @@
   <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name" class="font-weight-bold text-primary">Titulo de la tarea</label>
-      <input type="text" class="form-control" placeholder="Tarea" ngModel="{{task.name}}" formControlName="name">
+      <input type="text" class="form-control" placeholder="Tarea" formControlName="name">
     </div>
     <div class="form-group">
       <label>Asignado a:</label>
@@ -16,7 +16,7 @@
     </div>
     <div class="form-group">
       <div class="input-group">
-        <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker" formControlName="deadline">
+        <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker" formControlName="deadline" value="{{task.deadline | date:'yyyy-mm-dd'}}">
         <div class="input-group-append">
           <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
             <i class="fas fa-calendar-alt"></i>
