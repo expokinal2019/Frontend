@@ -1,11 +1,11 @@
 <section class="container">
-  <h4 class="text-primary font-weight-bold pt-4">Crear tarea</h4>
+  <h2 class="text-primary font-weight-bold pt-4 animated fadeInDown delay-0.7s">Crear tarea</h2>
   <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
+    <div class="form-group animated fadeIn delay-1s">
       <label for="name" class="font-weight-bold text-primary">Titulo de la tarea</label>
       <input type="text" class="form-control" placeholder="Tarea" formControlName="name">
     </div>
-    <div class="form-group">
+    <div class="form-group animated fadeIn delay-1s">
       <label>Asignado a:</label>
       <div class="md-chips">
         <div class="md-chip md-chip-hover">
@@ -14,7 +14,7 @@
         </div>
       </div>
     </div>
-    <div class="form-group">
+    <div class="form-group animated fadeIn delay-2s">
       <div class="input-group">
         <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker" formControlName="deadline">
         <div class="input-group-append">
@@ -24,11 +24,11 @@
         </div>
       </div>
     </div>
-    <div class="form-group">
+    <div class="form-group animated fadeIn delay-2s">
       <label for="description">Descripción</label>
       <textarea formControlName="description" class="form-control" name="description" id="description" cols="30" rows="5"></textarea>
     </div>
-    <div class="form-group">
+    <div class="form-group animated fadeIn delay-2s">
       <label for="labels">Etiquetas</label>
       <input type="text" class="form-control" placeholder="Etiquetas">
     </div>
