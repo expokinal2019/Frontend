@@ -20,6 +20,7 @@ export interface Task {
 })
 export class EditTaskComponent {
 
+  public labels: [];
   public task: Task = {
   };
   public id;
@@ -44,7 +45,8 @@ export class EditTaskComponent {
           description: this.task.description,
           labels: this.task.labels
         });
-        console.log(this.task.labels)
+        
+        this.labels = this.task.labels;
       }
       
     );

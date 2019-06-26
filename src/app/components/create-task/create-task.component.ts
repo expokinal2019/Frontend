@@ -13,6 +13,7 @@ export class CreateTaskComponent {
     name: ['', Validators.required],
     deadline: ['', Validators.required],
     description: ['', Validators.required],
+    labels: ['', Validators.required]
   });
 
   constructor(private fb: FormBuilder, private rest: RestService, private router: Router) { }
