@@ -80,4 +80,10 @@ export class RestService {
       map(this.extractData)
     );
   }
+
+  delete(url) {
+    return this.http.delete(this.endpoint + url, this.httpOptions).pipe(
+      map(this.extractData)
+    );
+  }
 }

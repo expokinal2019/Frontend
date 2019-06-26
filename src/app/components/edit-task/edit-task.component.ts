@@ -25,10 +25,10 @@ export class EditTaskComponent {
   };
   public id;
   public taskForm = this.fb.group({
-    name: ['name', Validators.required],
-    deadline: [Date.now(), Validators.required],
-    description: ['description', Validators.required],
-    labels: ['labels', Validators.required]
+    name: ['', Validators.required],
+    deadline: ['', Validators.required],
+    description: ['', Validators.required],
+    labels: ['', Validators.required]
   });
 
   constructor(private fb: FormBuilder, private rest: RestService, private router: Router, private activeRoute: ActivatedRoute) {
@@ -45,21 +45,23 @@ export class EditTaskComponent {
           description: this.task.description,
           labels: this.task.labels
         });
-        
-        this.labels = this.task.labels;
       }
-      
     );
   }
 
   onSubmit() {
-    let deadline = this.taskForm.value.deadline;
-    this.taskForm.value.deadline = `${deadline.year}/${deadline.month}/${deadline.day}`
-    this.rest.push('tasks', this.taskForm.value).subscribe(
+    this.rest.put('tasks/' + this.id, this.taskForm.value).subscribe(
       res => {
         this.router.navigate(['tasks']);
       }
     )
   }
 
+  eliminar(){
+    this.rest.delete('tasks/' + this.id).subscribe(
+      res => {
+        this.router.navigate(['tasks']);
+      }
+    )
+  }
 }
