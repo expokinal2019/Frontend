@@ -3,7 +3,7 @@
   <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name" class="font-weight-bold text-primary">Titulo de la tarea</label>
-      <input type="text" class="form-control" placeholder="Tarea" formControlName="name">
+      <input type="text" class="form-control" placeholder="Tarea" value="{{task.name}}" formControlName="name">
     </div>
     <div class="form-group">
       <label>Asignado a:</label>
@@ -30,7 +30,7 @@
     </div>
     <div class="form-group">
       <label for="labels">Etiquetas</label>
-      <input type="text" class="form-control" placeholder="Etiquetas">
+      <input type="text" class="form-control" value="{{task.labels}}" placeholder="Etiquetas">
     </div>
     <button type="submit" class="btn btn-primary {{ taskForm.status == 'INVALID' ? 'disabled' : ''}}">
       Actualizar tarea

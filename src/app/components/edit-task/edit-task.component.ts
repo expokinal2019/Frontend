@@ -27,6 +27,7 @@ export class EditTaskComponent {
     name: ['name', Validators.required],
     deadline: [Date.now(), Validators.required],
     description: ['description', Validators.required],
+    labels: ['labels', Validators.required]
   });
 
   constructor(private fb: FormBuilder, private rest: RestService, private router: Router, private activeRoute: ActivatedRoute) {
@@ -40,9 +41,12 @@ export class EditTaskComponent {
         this.taskForm.setValue({
           name: this.task.name,
           deadline: this.task.deadline,
-          description: this.task.description
+          description: this.task.description,
+          labels: this.task.labels
         });
+        console.log(this.task.labels)
       }
+      
     );
   }
 
