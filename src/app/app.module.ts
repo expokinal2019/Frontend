@@ -10,7 +10,9 @@ import { IndexComponent } from './components/index/index.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListTasksComponent } from './components/list-tasks/list-tasks.component';
-import { EditTaskComponent } from './components/edit-task/edit-task.component';
+import { EditTaskComponent} from './components/edit-task/edit-task.component';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogService } from './components/confirmation-dialog/confirmation-dialog.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { EditTaskComponent } from './components/edit-task/edit-task.component';
     CreateTaskComponent,
     IndexComponent,
     ListTasksComponent,
-    EditTaskComponent
+    EditTaskComponent,
+    ConfirmationDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,9 @@ import { EditTaskComponent } from './components/edit-task/edit-task.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [NgbAccordionConfig],
-  bootstrap: [AppComponent]
+  exports: [EditTaskComponent],
+  providers: [NgbAccordionConfig, ConfirmationDialogService ],
+  bootstrap: [AppComponent],
+  entryComponents: [ ConfirmationDialogComponent ]
 })
 export class AppModule { }
