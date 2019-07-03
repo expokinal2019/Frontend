@@ -66,6 +66,35 @@ export class RestService {
   }
 
   /**
+   * Update
+   * Ej:
+   *  push('person', 'adsflj3f3fef3f3c', { firstName: 'Name', ... })
+   *
+   * @param modelName Nombre de la entidad
+   * @param object Objeto a guardar
+   */
+  update(modelName: string, id: string, object) {
+    const params = JSON.stringify(object);
+    return this.http.put(`${this.endpoint + modelName}/${id}`, params, this.httpOptions).pipe(
+      map(this.extractData)
+    );
+  }
+
+  /**
+   * Delete
+   * Ej:
+   *  delete('person', 'adfadsfadfae3aw3r3')
+   *
+   * @param modelName Nombre de la entidad
+   * @param id Id de la entidad 
+   */
+  delete(modelName: string, id: string) {
+    return this.http.delete(this.endpoint + modelName + `/${id}`, this.httpOptions).pipe(
+      map(this.extractData)
+    );
+  }
+
+  /**
    * @TODO Una función para estos metodos.
    */
   get(url) {

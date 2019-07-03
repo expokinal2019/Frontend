@@ -4,6 +4,7 @@ import { RestService } from 'src/app/services/rest.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 export interface Task {
+  _id?: string,
   name?: string,
   description?: string,
   deadline?: Date,
@@ -39,7 +40,7 @@ export class EditTaskComponent {
         this.task = res['tasks'];
         this.taskForm.setValue({
           name: this.task.name,
-          deadline: this.task.deadline,
+          deadline: new Date(this.task.deadline),
           description: this.task.description
         });
       }
@@ -48,8 +49,18 @@ export class EditTaskComponent {
 
   onSubmit() {
     let deadline = this.taskForm.value.deadline;
-    this.taskForm.value.deadline = `${deadline.year}/${deadline.month}/${deadline.day}`
-    this.rest.push('tasks', this.taskForm.value).subscribe(
+    if(!deadline.getDay) {
+      this.taskForm.value.deadline = `${deadline.year}/${deadline.month}/${deadline.day}`;
+    }
+    this.rest.update('tasks', this.task._id,this.taskForm.value).subscribe(
+      res => {
+        this.router.navigate(['tasks']);
+      }
+    )
+  }
+
+  delete() {
+    this.rest.delete('tasks', this.task._id).subscribe(
       res => {
         this.router.navigate(['tasks']);
       }
