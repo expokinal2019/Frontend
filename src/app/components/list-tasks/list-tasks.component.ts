@@ -14,14 +14,11 @@ export class ListTasksComponent implements OnInit {
 
   ngOnInit() {
     this.rest.findAll('tasks').subscribe(
-      res => {this.tasks = res['tasks']
-      console.log(res)}
+      res => { this.tasks = res['tasks'] }
     );
   }
 
   getID(id){
     this.id = id
-    console.log(this.id)
   }
-
 }

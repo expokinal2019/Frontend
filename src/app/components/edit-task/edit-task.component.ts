@@ -47,12 +47,6 @@ export class EditTaskComponent {
         });
       }
     );
-
-    this.rest.findAll('labels').subscribe(
-      res => {
-        console.log(res);
-      }
-    );
   }
 
   onSubmit() {
