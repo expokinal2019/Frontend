@@ -13,13 +13,18 @@ export class CreateTaskComponent {
     name: ['', Validators.required],
     deadline: ['', Validators.required],
     description: ['', Validators.required],
+    labels: ['']
   });
 
   constructor(private fb: FormBuilder, private rest: RestService, private router: Router) { }
 
   onSubmit() {
+    // Crear labels
+    this.taskForm.value.labels = this.taskForm.value.labels.split(',');
+
+    // Formatear fecha
     let deadline = this.taskForm.value.deadline;
-    this.taskForm.value.deadline = `${deadline.year}/${deadline.month}/${deadline.day}`
+    this.taskForm.value.deadline = `${deadline.year}/${deadline.month}/${deadline.day}`;
     this.rest.push('tasks', this.taskForm.value).subscribe(
       res => {
         this.router.navigate(['tasks']);
