@@ -1,9 +1,9 @@
 <div class="d-flex" id="wrapper">
   <!-- Sidenav -->
   <div class="sidebar-cont shadow-sm" id="sidebar-wrapper">
-    <div class="sidebar-heading text-center">
+    <a class="sidebar-heading text-center" [routerLink]="['home']">
       <img src="assets/logo.png" height="160px">
-    </div>
+    </a>
     <div class="list-group list-group-flush">
       <button class="btn btn-outline-primary btn-sm mx-2 shadow-sm" (click)="navigateTo('tasks/create')">
         <i class="fas fa-plus"></i>
