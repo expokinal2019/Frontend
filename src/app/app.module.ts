@@ -10,6 +10,10 @@ import { IndexComponent } from './components/index/index.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListTasksComponent } from './components/list-tasks/list-tasks.component';
+import { AuthenticationService } from './services/authentication.service';
+import { LoginComponent } from './components/login/login.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,16 +21,19 @@ import { ListTasksComponent } from './components/list-tasks/list-tasks.component
     NavbarComponent,
     CreateTaskComponent,
     IndexComponent,
-    ListTasksComponent
+    ListTasksComponent,
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [NgbAccordionConfig],
+  providers: [NgbAccordionConfig, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
