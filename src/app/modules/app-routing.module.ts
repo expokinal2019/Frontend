@@ -9,6 +9,8 @@ import { ListTasksComponent } from '../components/list-tasks/list-tasks.componen
 import { EditTaskComponent } from '../components/edit-task/edit-task.component';
 import { CreateTeamComponent } from '../components/create-team/create-team.component';
 import { ListTeamComponent } from '../components/list-team/list-team.component';
+import { LoginComponent } from '../components/login/login.component';
+import { SignUpComponent } from '../components/sign-up/sign-up.component';
 
 const appRoutes: Routes = [
   { path: 'navbar', component: NavbarComponent },
@@ -17,7 +19,9 @@ const appRoutes: Routes = [
   { path: 'teams/create', component: CreateTeamComponent },
   { path: 'teams', component: ListTeamComponent },
   { path: 'tasks/edit/:id', component: EditTaskComponent },
-  { path: '', component: IndexComponent }
+  { path: 'home', component: IndexComponent },
+  { path: 'sign-up', component: SignUpComponent },
+  { path: '', component: LoginComponent }
 ];
 
 @NgModule({

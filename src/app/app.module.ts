@@ -13,6 +13,10 @@ import { ListTasksComponent } from './components/list-tasks/list-tasks.component
 import { EditTaskComponent } from './components/edit-task/edit-task.component';
 import { CreateTeamComponent } from './components/create-team/create-team.component';
 import { ListTeamComponent } from './components/list-team/list-team.component';
+import { AuthenticationService } from './services/authentication.service';
+import { LoginComponent } from './components/login/login.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,16 +27,19 @@ import { ListTeamComponent } from './components/list-team/list-team.component';
     ListTasksComponent,
     EditTaskComponent,
     CreateTeamComponent,
-    ListTeamComponent
+    ListTeamComponent,
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [NgbAccordionConfig],
+  providers: [NgbAccordionConfig, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
