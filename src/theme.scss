@@ -1,16 +1,22 @@
+$dark: #0F2026;
+
+/* 
+    Light
+ */
 $primary: #319795;
 $secondary: #3182CE;
 $green: #38A169;
+$sidenav-background-color: #f8f9fa;
 
-// $primary: #BFD962;
-// $green: #73A626;
-
-$dark: #0F2026;
+/* 
+    Dark
+ */
+// $primary: darken(#73d6ff, 20%);
+// $secondary: darken(#f47a1a, 20%);
+// $green: darken(#38A169, 20%);
+// $sidenav-background-color: $dark;
 
 @import
     'functions',
     'variables',
     'mixins';
-
-$sidenav-background-color: $light;
-
