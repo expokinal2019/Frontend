@@ -1,11 +1,14 @@
 <div class="container">
   <h4 class="text-primary font-weight-bold pt-4">Equipos</h4>
   <div class="list-group list-group-flush">
-    <a  (click)='open(content, team._id)'  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-      *ngFor="let team of teams" [routerLink]="['/team/edit', team._id]">
+    <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+      *ngFor="let team of teams" [routerLink]="['/teams/edit', team._id]">
         {{team.name}}
       <span class="badge badge-primary badge-pill text-wrap">
         {{team.description}}
+      </span>
+      <span (click)='open(content, team._id)'>
+        <i class="fas fa-users"></i>
       </span>
     </a>
   </div>
@@ -23,8 +26,13 @@
     <form [formGroup]="memberForm">
       <div class="form-group" (ngSubmit)="onSubmit()">
         <label for="member">Integrante:</label>
-        <!-- <input  ngModel placeholder="Login"> -->
-        <input name="member" id="typeahead-basic" type="text" class="form-control" [ngbTypeahead]="search" formControlName="member"/>
+        <ng-template #rt let-r="result" let-t="term">
+          <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+        </ng-template>
+        <input name="member" id="typeahead-template" type="text" class="form-control" formControlName="member"
+          [ngbTypeahead]="search"
+          [resultTemplate]="rt"
+          [inputFormatter]="formatter"/>
       </div>
       <button type="button" class="btn btn-outline-dark" (click)="onSubmit()">Save</button>
     </form>

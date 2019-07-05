@@ -17,6 +17,7 @@ import { AuthenticationService } from './services/authentication.service';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
+import { EditTeamComponent } from './components/edit-team/edit-team.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     CreateTeamComponent,
     ListTeamComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    EditTeamComponent
   ],
   imports: [
     BrowserModule,

@@ -39,12 +39,14 @@ export class ListTeamComponent implements OnInit {
       debounceTime(200),
       distinctUntilChanged(),
       map(term => term.length < 2 ? []
-        : this.members.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
-  )
-  
+        : this.users.filter(v => v.name.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
+    )
+
+  formatter = (x: {name: string}) => x.name;
+
   onSubmit() {
     // Agregar integrante a equipo seleccionado
-    this.rest.put(`teams/${this.id}/integrant/${this.memberForm.value.member}`, {}).subscribe(
+    this.rest.put(`teams/${this.id}/integrant/${this.memberForm.value.member._id}`, {}).subscribe(
       res => {
         console.log(res);
       }

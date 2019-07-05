@@ -34,7 +34,7 @@ export class AuthenticationService {
 
   public login(email: string, password: string): Observable<any> {
     return this.http.post(
-        `https://expokinal-backend2019.herokuapp.com/api/v1/users/login`, 
+        `${environment.endpoint}users/login`,
         { email, password}, {headers: this.httpOptions.headers}
       );
   }
@@ -47,7 +47,7 @@ export class AuthenticationService {
 
   public signUp(email: string, password: string, name: string, username: string): Observable<any> {
     return this.http.post<any>(
-        `https://expokinal-backend2019.herokuapp.com/api/v1/users/sign-up`, 
+        `${environment.endpoint}users/sign-up`,
         { email, password, name, username}, {headers: this.httpOptions.headers}
       );
   }
