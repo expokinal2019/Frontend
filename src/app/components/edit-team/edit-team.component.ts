@@ -31,13 +31,6 @@ export class EditTeamComponent {
 
     this.rest.findOne('teams', this.id).subscribe(
       res => {
-        res['teams'].integrants = res['teams'].integrants.map((team) => {
-          return this.rest.findOne('users', team.user).subscribe(
-            res => {
-              return res['users'];
-            }
-          );
-        });
         this.team = res['teams'];
         this.teamForm.setValue({
           name: this.team.name,

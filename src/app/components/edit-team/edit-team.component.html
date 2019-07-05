@@ -11,7 +11,7 @@
     </div>
     <ul>
       <li *ngFor="let member of team.integrants">
-        a {{ member | json }}
+        {{ member.user }}
       </li>
     </ul>
     <button type="submit" class="btn btn-primary {{ teamForm.status == 'INVALID' ? 'disabled' : ''}}">
