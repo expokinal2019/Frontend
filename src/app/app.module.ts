@@ -11,6 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListTasksComponent } from './components/list-tasks/list-tasks.component';
 import { EditTaskComponent } from './components/edit-task/edit-task.component';
+import { CreateTeamComponent } from './components/create-team/create-team.component';
+import { ListTeamComponent } from './components/list-team/list-team.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { EditTaskComponent } from './components/edit-task/edit-task.component';
     CreateTaskComponent,
     IndexComponent,
     ListTasksComponent,
-    EditTaskComponent
+    EditTaskComponent,
+    CreateTeamComponent,
+    ListTeamComponent
   ],
   imports: [
     BrowserModule,
