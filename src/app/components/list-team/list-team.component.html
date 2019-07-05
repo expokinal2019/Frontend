@@ -1,15 +1,23 @@
 <div class="container">
   <h4 class="text-primary font-weight-bold pt-4">Equipos</h4>
   <div class="list-group list-group-flush">
-    <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-      *ngFor="let team of teams" [routerLink]="['/teams/edit', team._id]">
+    <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" *ngFor="let team of teams">
+      <div>
         {{team.name}}
-      <span class="badge badge-primary badge-pill text-wrap">
-        {{team.description}}
-      </span>
-      <span (click)='open(content, team._id)'>
-        <i class="fas fa-users"></i>
-      </span>
+        <span class="badge badge-primary badge-pill text-wrap">
+          {{team.description}}
+        </span>
+      </div>
+      <div>
+        <button class="btn btn-primary" (click)='open(content, team._id)'>
+          <i class="fas fa-users"></i>
+        </button>
+        <a [routerLink]="['/teams/edit', team._id]">
+          <button class="btn btn-secondary mx-2">
+            Editar
+          </button>
+        </a>
+      </div>
     </a>
   </div>
 </div>
