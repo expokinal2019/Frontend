@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { RestService } from 'src/app/services/rest.service';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-create-task',
@@ -16,9 +17,10 @@ export class CreateTaskComponent {
     labels: ['']
   });
 
-  constructor(private fb: FormBuilder, private rest: RestService, private router: Router) { }
+  constructor(private fb: FormBuilder, private rest: RestService, private router: Router, private auth: AuthenticationService) { }
 
   onSubmit() {
+    this.taskForm.value.taskOwner = [this.auth.currentUserValue().id]
     // Crear labels
     this.taskForm.value.labels = this.taskForm.value.labels.split(',');
 

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  endpoint: 'https://expokinal-backend2019.herokuapp.com/api/v1/'
+  endpoint: 'http://localhost:3000/api/v1/'
+  // endpoint: 'https://expokinal-backend2019.herokuapp.com/api/v1/'
 };
 
 /*
