@@ -18,6 +18,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
 import { EditTeamComponent } from './components/edit-team/edit-team.component';
+import { Error404Component } from './components/error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { EditTeamComponent } from './components/edit-team/edit-team.component';
     ListTeamComponent,
     LoginComponent,
     SignUpComponent,
-    EditTeamComponent
+    EditTeamComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,

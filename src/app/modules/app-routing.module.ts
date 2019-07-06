@@ -12,18 +12,24 @@ import { ListTeamComponent } from '../components/list-team/list-team.component';
 import { LoginComponent } from '../components/login/login.component';
 import { SignUpComponent } from '../components/sign-up/sign-up.component';
 import { EditTeamComponent } from '../components/edit-team/edit-team.component';
+import { Error404Component } from '../components/error404/error404.component';
 
 const appRoutes: Routes = [
-  { path: 'navbar', component: NavbarComponent },
-  { path: 'tasks/create', component: CreateTaskComponent },
-  { path: 'tasks/edit/:id', component: EditTaskComponent },
-  { path: 'tasks', component: ListTasksComponent },
-  { path: 'teams/create', component: CreateTeamComponent },
-  { path: 'teams/edit/:id', component: EditTeamComponent },
-  { path: 'teams', component: ListTeamComponent },
-  { path: 'home', component: IndexComponent },
-  { path: 'sign-up', component: SignUpComponent },
-  { path: '', component: LoginComponent }
+  { path: '',
+    component: NavbarComponent,
+    children: [
+      { path: '', component: IndexComponent },
+      { path: 'tasks/create', component: CreateTaskComponent },
+      { path: 'tasks/edit/:id', component: EditTaskComponent },
+      { path: 'tasks', component: ListTasksComponent },
+      { path: 'teams/create', component: CreateTeamComponent },
+      { path: 'teams/edit/:id', component: EditTeamComponent },
+      { path: 'teams', component: ListTeamComponent },
+    ]
+  },
+  { path: 'signup', component: SignUpComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '**', component: Error404Component }
 ];
 
 @NgModule({
