@@ -11,7 +11,7 @@ import {debounceTime} from 'rxjs/operators';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  public email: string;
+  public email: string = 'expo@kinal.org';
   public password: string;
   private _success = new Subject<string>();
 
@@ -42,16 +42,16 @@ export class LoginComponent implements OnInit {
           response.foundUser.username,
           response.foundUser.email,
           response.token
-        )
+        );
         localStorage.setItem('currentUser', JSON.stringify(x));
 
-        this.router.navigate(['home'])
+        this.router.navigate(['']);
       } else {
-        this.changeSuccessMessage(response.error.message)
+        this.changeSuccessMessage(response.error.message);
       }
     }, err => {
-      console.log(err)
-      this.changeSuccessMessage(err.error.message)
+      console.log(err);
+      this.changeSuccessMessage(err.error.message);
     }); 
   }
 
